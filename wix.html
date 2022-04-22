@@ -1,0 +1,32 @@
+import {fetch} from 'wix-fetch';
+
+$w.onReady(function () {
+	$w("#button1").onClick(function(event){
+		let title = $w('#title').value;
+		console.log(title);
+		let content = $w('#content').value;
+		console.log(content);
+		
+		let image = $w('#image').value;
+		console.log(title);
+		let total = $w('#total').value;
+		console.log(content);
+
+
+		let latitude = $w('#latitude').value;
+		console.log(title);
+		let longitude = $w('#longitude').value;
+		console.log(content);
+  
+   
+		let data = {"title":title,"content":content,
+		"image":image,
+		"total":total,
+		"longitude":longitude,
+		"latitude":latitude};
+		$w("#html1").postMessage(JSON.stringify(data));
+		$w("#html1").show();
+	});
+
+});
+
