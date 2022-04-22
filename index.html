@@ -21,6 +21,29 @@
 
 <body>
 世新新聞
+<p id="title">
+
+</p>
+	
+	<p id="image">
+
+</p>
+	
+	<p id="content">
+
+</p>
+	
+	<p id="total">
+
+</p>
+	
+	<p id="latitude">
+
+</p>
+	
+	<p id="longitude">
+
+</p>
 	
 	
 	<script>
@@ -28,7 +51,19 @@
   get: (searchParams, prop) => searchParams.get(prop),
 });
 console.log(params);
-console.log(params.latitude);
+let latitude = params.latitude;
+let longitude = params.longitude;
+let title = params.title;
+let content = params.content;
+let image = params.image;
+let total = params.total;
+document.querySelector("#title").innerText = title;
+document.querySelector("#content").innerText = content;
+document.querySelector("#image").innerText = image;
+document.querySelector("#content").innerText = content;
+document.querySelector("#longitude").innerText = longitude;
+document.querySelector("#latitude").innerText = latitude;
+
 // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
  
 	</script>
