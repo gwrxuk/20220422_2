@@ -47,9 +47,13 @@
 	
 	
 	<script>
-	const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+	window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event)
+{
+
+params = event.data;
+document.querySelector("#title").innerText = params;
 console.log(params);
 let latitude = params.latitude;
 let longitude = params.longitude;
@@ -63,6 +67,8 @@ document.querySelector("#image").innerText = image;
 document.querySelector("#content").innerText = content;
 document.querySelector("#longitude").innerText = longitude;
 document.querySelector("#latitude").innerText = latitude;
+}
+
 
 // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
  
