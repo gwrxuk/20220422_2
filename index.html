@@ -52,7 +52,7 @@
 function receiveMessage(event)
 {
 
-params = event.data;
+params = JSON.parse(event.data);
 document.querySelector("#title").innerText = params;
 console.log(params);
 let latitude = params.latitude;
